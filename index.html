@@ -599,19 +599,20 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: var(--cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 300;
   opacity: 1;
   transition: opacity 0.8s ease 0.5s, visibility 0.8s ease 0.5s;
   visibility: visible;
   cursor: pointer;
   padding: 0;
-  overflow: auto;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .splash-screen.hidden {
   opacity: 0;
@@ -619,27 +620,24 @@ footer {
   pointer-events: none;
 }
 .splash-image {
-  max-width: 100%;
-  max-height: 100vh;
-  min-height: 100vh;
-  object-fit: contain;
-  animation: splashZoom 0.8s ease-out;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  animation: splashZoom 0.8s ease-out;
   display: block;
 }
 @media(max-width: 768px) {
   .splash-image {
-    max-width: 100%;
-    max-height: 100vh;
-    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 @media(max-width: 480px) {
   .splash-image {
-    max-width: 100%;
-    max-height: 100vh;
-    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 @keyframes splashZoom {
